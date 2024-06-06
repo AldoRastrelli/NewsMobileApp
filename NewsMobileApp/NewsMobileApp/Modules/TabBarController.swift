@@ -12,7 +12,7 @@ final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let newsViewController = PostsFeedModule.build() // TODO change this to news
+        let newsViewController = PostsFeedModule.build()
         newsViewController.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "newspaper"), selectedImage: UIImage(systemName: "newspaper.fill"))
         
         let friendsViewController = PostsViewController(viewModel: PostsViewModel()) // TODO change this to friends

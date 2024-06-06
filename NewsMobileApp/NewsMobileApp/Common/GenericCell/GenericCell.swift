@@ -31,13 +31,14 @@ final class GenericCell: UITableViewCell {
         contentView.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        titleLabel.numberOfLines = 3
         titleLabel.anchor(top: contentView.topAnchor, paddingTop: 10,
                           leading: contentView.leadingAnchor, paddingLeading: 24,
                           trailing: contentView.trailingAnchor, paddingTrailing: 24)
         
         contentView.addSubview(subtitleLabel)
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        subtitleLabel.font = UIFont.systemFont(ofSize: 10, weight: .light)
+        subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
         subtitleLabel.numberOfLines = 2
         subtitleLabel.lineBreakMode = .byTruncatingTail
         subtitleLabel.anchor(top: titleLabel.bottomAnchor, paddingTop: 10,
