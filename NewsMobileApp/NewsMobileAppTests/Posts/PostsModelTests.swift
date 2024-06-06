@@ -8,9 +8,9 @@
 import XCTest
 @testable import NewsMobileApp
 
-class PostTests: XCTestCase {
+class PostModelTests: XCTestCase {
     
-    func testDecodePostFromValidJSON() throws {
+    func test_decodePostFromValidJSON_postIsValid() throws {
         // Given
         let json = """
         {
@@ -36,7 +36,7 @@ class PostTests: XCTestCase {
         XCTAssertEqual(post.publishedAt, "2024-06-10")
     }
     
-    func testEncodePostToValidJSON() throws {
+    func test_encodePostToValidJSON_isValidPost() throws {
         // Given
         let post = Post(id: 1, title: "Test Title", content: "Test Content", thumbnail: "test_thumbnail.jpg", category: "Test Category", publishedAt: "2024-06-10")
         
