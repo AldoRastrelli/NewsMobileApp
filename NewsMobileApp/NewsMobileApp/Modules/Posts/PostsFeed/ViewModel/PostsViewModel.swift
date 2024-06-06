@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class PostsViewModel {
+final class PostsViewModel {
     @Published var posts: Posts = [] { didSet { filteredPosts = posts } }
     @Published private(set) var filteredPosts: Posts = []
     @Published var searchText: String = ""
