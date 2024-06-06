@@ -46,6 +46,7 @@ final class PostsViewController: UIViewController {
         // Add SearchBar
         searchBar.placeholder = "Search"
         view.addSubview(searchBar)
+        searchBar.delegate = self
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.anchor(top: viewTitle.bottomAnchor, paddingTop: 10, leading: safeArea.leadingAnchor, paddingLeading: 24, trailing: safeArea.trailingAnchor, paddingTrailing: 24)
     }
@@ -61,7 +62,7 @@ final class PostsViewController: UIViewController {
     }
     
     private func setupBindings() {
-        viewModel.$posts.sink { [weak self] _ in
+        viewModel.$filteredPosts.sink { [weak self] _ in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
@@ -72,12 +73,12 @@ final class PostsViewController: UIViewController {
 
 extension PostsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.posts.count
+        return viewModel.filteredPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
-        let post = viewModel.posts[indexPath.row]
+        let post = viewModel.filteredPosts[indexPath.row]
         cell.textLabel?.text = post.title
         return cell
     }
@@ -85,7 +86,13 @@ extension PostsViewController: UITableViewDataSource {
 
 extension PostsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let post = viewModel.posts[indexPath.row]
+        let post = viewModel.filteredPosts[indexPath.row]
         print(post)
+    }
+}
+
+extension PostsViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.searchText = searchText
     }
 }
