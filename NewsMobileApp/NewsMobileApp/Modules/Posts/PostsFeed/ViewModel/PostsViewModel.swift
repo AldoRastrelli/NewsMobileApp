@@ -6,23 +6,46 @@
 //
 
 import Foundation
+import Combine
 
 class PostsViewModel: SearchViewDataProvider {
-    @Published var items: [SearchViewData] = []
-    @Published var searchText: String = ""
+//    @Published private(set) var filteredItems: [SearchViewData] = []
+    private var posts: [Post] = [] { didSet { items = posts } }
+    private var cancellables = Set<AnyCancellable>()
     
-    // To keep track of the changes
-    var itemsPublisher: Published<[SearchViewData]>.Publisher { $items }
+    // SearchViewDataProvider protocol
+    @Published var items: [SearchViewData] = [] // { didSet { filteredItems = items } }
+    @Published var searchText: String = ""
+    var itemsPublisher: Published<[SearchViewData]>.Publisher { $items } // { $filteredItems }
     var searchTextPublisher: Published<String>.Publisher { $searchText }
     
-    public var posts: [Post] = [] {
-        didSet {
-            items = posts
-        }
+    init() {
+        setBindings()
+        fetchPosts()
     }
     
-    init() {
-        fetchPosts()
+    private func setBindings() {
+        $searchText.sink { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.searchPosts()
+            }
+        }.store(in: &cancellables)
+    }
+    
+    private func searchPosts() {
+//        $searchText
+//                .debounce(for: .milliseconds(300), scheduler: RunLoop.main)
+//                .combineLatest($items)
+//                .map { [weak self] searchText, items in
+//                    guard let self = self else { return items }
+//                    let trimmedSearchText = searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+//                    guard !trimmedSearchText.isEmpty else { return items }
+//                    return self.posts.filter {
+//                        $0.title.lowercased().contains(trimmedSearchText) ||
+//                        $0.subtitle.lowercased().contains(trimmedSearchText)
+//                    }
+//                }
+//                .assign(to: &$filteredItems)
     }
     
     private func fetchPosts() {

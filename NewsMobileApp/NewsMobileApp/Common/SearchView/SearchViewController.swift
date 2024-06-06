@@ -10,7 +10,7 @@ import Combine
 
 final class SearchViewController: UIViewController {
     
-    private let viewModel: SearchViewDataProvider
+    private var viewModel: SearchViewDataProvider
     private var viewTitle = UILabel()
     private var searchBar = UISearchBar()
     private let tableView = UITableView()
@@ -46,6 +46,7 @@ final class SearchViewController: UIViewController {
         // Add SearchBar
         searchBar.placeholder = "Search"
         view.addSubview(searchBar)
+        searchBar.delegate = self
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.anchor(top: viewTitle.bottomAnchor, paddingTop: 10, leading: safeArea.leadingAnchor, paddingLeading: 24, trailing: safeArea.trailingAnchor, paddingTrailing: 24)
     }
@@ -87,5 +88,12 @@ extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = viewModel.items[indexPath.row]
         print(post)
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Use searchTextPublisher to send the search text to the viewModel
+        viewModel.searchText = searchText
     }
 }
