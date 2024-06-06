@@ -17,6 +17,7 @@
 		6BFBACC22C11273200D33DB1 /* NewsMobileAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFBACC12C11273200D33DB1 /* NewsMobileAppUITests.swift */; };
 		6BFBACC42C11273200D33DB1 /* NewsMobileAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFBACC32C11273200D33DB1 /* NewsMobileAppUITestsLaunchTests.swift */; };
 		6BFBACD22C11325700D33DB1 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFBACD12C11325700D33DB1 /* TabBar.swift */; };
+		6BFBACD52C11606200D33DB1 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFBACD42C11606200D33DB1 /* NewsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		6BFBACC12C11273200D33DB1 /* NewsMobileAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsMobileAppUITests.swift; sourceTree = "<group>"; };
 		6BFBACC32C11273200D33DB1 /* NewsMobileAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsMobileAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6BFBACD12C11325700D33DB1 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		6BFBACD42C11606200D33DB1 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +135,26 @@
 		6BFBACD02C11279900D33DB1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6BFBACD32C11605200D33DB1 /* News */,
 				6BFBACD12C11325700D33DB1 /* TabBar.swift */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		6BFBACD32C11605200D33DB1 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				6BFBACD62C11615C00D33DB1 /* Model */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		6BFBACD62C11615C00D33DB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6BFBACD42C11606200D33DB1 /* NewsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +292,7 @@
 				6BFBACA12C11272F00D33DB1 /* AppDelegate.swift in Sources */,
 				6BFBACA32C11272F00D33DB1 /* SceneDelegate.swift in Sources */,
 				6BFBACD22C11325700D33DB1 /* TabBar.swift in Sources */,
+				6BFBACD52C11606200D33DB1 /* NewsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
