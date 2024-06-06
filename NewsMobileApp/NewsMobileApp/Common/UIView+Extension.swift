@@ -12,10 +12,10 @@ public extension UIView {
                 paddingTop: CGFloat = 0,
                 leading: NSLayoutXAxisAnchor? = nil,
                 paddingLeading: CGFloat = 0,
-                bottom: NSLayoutYAxisAnchor? = nil,
-                paddingBottom: CGFloat = 0,
                 trailing: NSLayoutXAxisAnchor? = nil,
                 paddingTrailing: CGFloat = 0,
+                bottom: NSLayoutYAxisAnchor? = nil,
+                paddingBottom: CGFloat = 0,
                 width: CGFloat? = nil,
                 height: CGFloat? = nil) {
         

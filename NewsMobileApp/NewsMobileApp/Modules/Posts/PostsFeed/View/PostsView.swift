@@ -35,28 +35,30 @@ final class PostsViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
+        let safeArea = view.safeAreaLayoutGuide
+        
         // Add Title
         viewTitle.text = "My News"
-        viewTitle.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        viewTitle.font = UIFont.systemFont(ofSize: 36, weight: .bold)
         view.addSubview(viewTitle)
         viewTitle.translatesAutoresizingMaskIntoConstraints = false
-        let safeArea = view.safeAreaLayoutGuide
-        viewTitle.anchor(top: safeArea.topAnchor, paddingTop: 10, leading: safeArea.leadingAnchor, paddingLeading: 24, trailing: safeArea.trailingAnchor, paddingTrailing: 24)
+        
+        viewTitle.anchor(top: safeArea.topAnchor, paddingTop: 24, leading: safeArea.leadingAnchor, paddingLeading: 24, trailing: safeArea.trailingAnchor, paddingTrailing: 24)
         
         // Add SearchBar
         searchBar.placeholder = "Search"
         view.addSubview(searchBar)
         searchBar.delegate = self
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.anchor(top: viewTitle.bottomAnchor, paddingTop: 10, leading: safeArea.leadingAnchor, paddingLeading: 24, trailing: safeArea.trailingAnchor, paddingTrailing: 24)
+        searchBar.anchor(top: viewTitle.bottomAnchor, paddingTop: 30, leading: safeArea.leadingAnchor, trailing: safeArea.trailingAnchor)
+        searchBar.searchTextField.anchor(leading: viewTitle.leadingAnchor, trailing: viewTitle.trailingAnchor)
+        searchBar.searchBarStyle = .minimal
     }
     
     private func setupTableView() {
         view.addSubview(tableView)
-        tableView.anchor(top: searchBar.bottomAnchor, paddingTop: 10, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
-        // TODO: add cell
-        // tableView.register(PostCell.self, forCellReuseIdentifier: PostCell.reuseIdentifier)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PostCell")
+        tableView.anchor(top: searchBar.bottomAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor)
+        tableView.register(GenericCell.self, forCellReuseIdentifier: GenericCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -77,9 +79,12 @@ extension PostsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: GenericCell.identifier, for: indexPath) as? GenericCell else {
+            // This should never happen
+            preconditionFailure("Could not dequeue cell with identifier: \(GenericCell.identifier)")
+        }
         let post = viewModel.filteredPosts[indexPath.row]
-        cell.textLabel?.text = post.title
+        cell.configure(title: post.title, subtitle: post.content, disclaimer: post.publishedAt)
         return cell
     }
 }
