@@ -5,9 +5,6 @@
 //  Created by Aldana Rastrelli on 07/06/2024.
 //
 
-import Foundation
-import Combine
-
 final class PostDetailViewModel {
     var post: Post
     

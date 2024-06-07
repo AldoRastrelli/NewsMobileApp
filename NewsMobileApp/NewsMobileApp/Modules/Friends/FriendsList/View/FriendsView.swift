@@ -73,6 +73,7 @@ extension FriendsViewController: UITableViewDataSource {
 extension FriendsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = viewModel.users[indexPath.row]
-        print(user)
+        let vc = FriendsDetailModule.build(forUser: user)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
