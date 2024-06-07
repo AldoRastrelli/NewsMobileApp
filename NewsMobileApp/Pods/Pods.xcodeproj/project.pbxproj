@@ -15,7 +15,6 @@
 			dependencies = (
 			);
 			name = GoogleMaps;
-			productName = GoogleMaps;
 		};
 /* End PBXAggregateTarget section */
 
@@ -185,7 +184,7 @@
 		52DFDB2DD8CFB6C29CC5FBA6B817D11D /* GMUPlacemark.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMUPlacemark.h; path = src/Geometry/Model/GMUPlacemark.h; sourceTree = "<group>"; };
 		53D629468378B3B276B67C61FE07E93A /* Google-Maps-iOS-Utils-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Google-Maps-iOS-Utils-umbrella.h"; sourceTree = "<group>"; };
 		5B916CD5B81CE7B8C49C87B257615F81 /* GMUWeightedLatLng.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMUWeightedLatLng.h; path = src/Heatmap/GMUWeightedLatLng.h; sourceTree = "<group>"; };
-		5CA9E6FE438CE79CD76FA3B34CC95836 /* GoogleMapsUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GoogleMapsUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CA9E6FE438CE79CD76FA3B34CC95836 /* Google-Maps-iOS-Utils */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Google-Maps-iOS-Utils"; path = GoogleMapsUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9BE4F5887D2E0A5BCC1057762D7CD6 /* GMUDefaultClusterIconGenerator+Testing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GMUDefaultClusterIconGenerator+Testing.h"; path = "src/Clustering/View/GMUDefaultClusterIconGenerator+Testing.h"; sourceTree = "<group>"; };
 		5F3992A577F606E970D6E5959639003F /* GMUDefaultClusterIconGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMUDefaultClusterIconGenerator.h; path = src/Clustering/View/GMUDefaultClusterIconGenerator.h; sourceTree = "<group>"; };
 		610C8482714DCBE796365B98E7C761E8 /* Pods-NewsMobileAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NewsMobileAppTests-umbrella.h"; sourceTree = "<group>"; };
@@ -219,7 +218,7 @@
 		9483B5ACAA06C6D29859BB250C3A4876 /* GQTPointQuadTreeChild.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GQTPointQuadTreeChild.m; path = src/QuadTree/GQTPointQuadTreeChild.m; sourceTree = "<group>"; };
 		99683C4E6905173AB4161A4F9A681453 /* GMUGeometryRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMUGeometryRenderer.h; path = src/Geometry/GMUGeometryRenderer.h; sourceTree = "<group>"; };
 		9BC7E53A0D25DBE02B380524FC5B89DF /* GMUGeoJSONParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMUGeoJSONParser.h; path = src/Geometry/GMUGeoJSONParser.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E6D877F42299812D542957EA925F3AA /* Pods-NewsMobileApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewsMobileApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A9BDDE46A6DD19F7C55740CE872B99FD /* GMUGeometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMUGeometry.h; path = src/Geometry/Model/GMUGeometry.h; sourceTree = "<group>"; };
 		AA4C079469B8EE0241BC67799B50D1D6 /* Google-Maps-iOS-Utils-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Google-Maps-iOS-Utils-Info.plist"; sourceTree = "<group>"; };
@@ -375,6 +374,7 @@
 				4E345884EFB2204755FD2D4BFBBF1239 /* Maps */,
 				78CAE2B63377BA9E7DB8616A2FF3BF7B /* Support Files */,
 			);
+			name = GoogleMaps;
 			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
@@ -477,6 +477,7 @@
 				9ADEA73A67844D1152D79ADC3B8E1315 /* QuadTree */,
 				0A6FABAB76E65748317084CBC445C05D /* Support Files */,
 			);
+			name = "Google-Maps-iOS-Utils";
 			path = "Google-Maps-iOS-Utils";
 			sourceTree = "<group>";
 		};
@@ -551,7 +552,7 @@
 		C7D94CE67D73BB9C58AA3885EE295F2E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CA9E6FE438CE79CD76FA3B34CC95836 /* GoogleMapsUtils.framework */,
+				5CA9E6FE438CE79CD76FA3B34CC95836 /* Google-Maps-iOS-Utils */,
 				1375408BA04757F73F7D4D6B95A79362 /* Pods-NewsMobileApp */,
 				809C14097D81281446C1DFB36D1F8370 /* Pods-NewsMobileApp-NewsMobileAppUITests */,
 				BB0BF7AD825B82385BCA6670DF6A41A6 /* Pods-NewsMobileAppTests */,
@@ -710,7 +711,7 @@
 			);
 			name = "Google-Maps-iOS-Utils";
 			productName = GoogleMapsUtils;
-			productReference = 5CA9E6FE438CE79CD76FA3B34CC95836 /* GoogleMapsUtils.framework */;
+			productReference = 5CA9E6FE438CE79CD76FA3B34CC95836 /* Google-Maps-iOS-Utils */;
 			productType = "com.apple.product-type.framework";
 		};
 		B714B2436A65AA89517E1C6A5C068867 /* Pods-NewsMobileApp */ = {
@@ -921,6 +922,7 @@
 			baseConfigurationReference = 9E6D877F42299812D542957EA925F3AA /* Pods-NewsMobileApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -958,6 +960,7 @@
 			baseConfigurationReference = 94353C5B56BD14DB2FE2907599D598E9 /* Pods-NewsMobileApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1062,6 +1065,7 @@
 			baseConfigurationReference = D5B6D2197157528ED68CA27E32942B11 /* Pods-NewsMobileAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1099,6 +1103,7 @@
 			baseConfigurationReference = E3F58CE675C2D47EC1A7213966567693 /* Pods-NewsMobileApp-NewsMobileAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1138,6 +1143,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1153,6 +1159,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ECD92D2EA3BBCD5DA7F87F57DCD7FF05 /* Google-Maps-iOS-Utils.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1164,7 +1171,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Google-Maps-iOS-Utils/Google-Maps-iOS-Utils-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Google-Maps-iOS-Utils/Google-Maps-iOS-Utils-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1251,6 +1258,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4F640D204C68652934238BAF86E1690C /* Google-Maps-iOS-Utils.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1262,7 +1270,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Google-Maps-iOS-Utils/Google-Maps-iOS-Utils-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Google-Maps-iOS-Utils/Google-Maps-iOS-Utils-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1287,6 +1295,7 @@
 			baseConfigurationReference = F1C4849BB7B4A013738B9A6ACBFC1716 /* Pods-NewsMobileApp-NewsMobileAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1325,6 +1334,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1342,6 +1352,7 @@
 			baseConfigurationReference = 00D7801E126C0501696C6E2DFE9E5D88 /* Pods-NewsMobileAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

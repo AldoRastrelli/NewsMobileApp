@@ -14,12 +14,14 @@ final class PostsViewController: UIViewController {
     private var viewTitle = UILabel()
     private var searchBar = UISearchBar()
     private let tableView = UITableView()
+    private var headerView: HeaderView?
     
     private var cancellables = Set<AnyCancellable>()
     
     init(viewModel: PostsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.headerView = HeaderView(superView: self)
     }
     
     override func viewDidLoad() {
@@ -27,6 +29,14 @@ final class PostsViewController: UIViewController {
         setupUI()
         setupTableView()
         setupBindings()
+        setupKeyboard()
+    }
+    
+    func setupKeyboard() {
+        guard let header = headerView else { return }
+        // Add tap gesture for hiding keyboard
+        let tapGesture = UITapGestureRecognizer(target: header, action: #selector(header.handleTap(_:)))
+        header.addGestureRecognizer(tapGesture)
     }
     
     required init?(coder: NSCoder) {
@@ -36,6 +46,10 @@ final class PostsViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         let safeArea = view.safeAreaLayoutGuide
+        
+        guard let header = headerView else { return }
+        // Add header view: this will enable the gesture recognizer for closing the keyboard
+        view.addSubview(header)
         
         // Add Title
         viewTitle.text = "My News"
@@ -53,6 +67,10 @@ final class PostsViewController: UIViewController {
         searchBar.anchor(top: viewTitle.bottomAnchor, paddingTop: 30, leading: safeArea.leadingAnchor, trailing: safeArea.trailingAnchor)
         searchBar.searchTextField.anchor(leading: viewTitle.leadingAnchor, trailing: viewTitle.trailingAnchor)
         searchBar.searchBarStyle = .minimal
+        
+        // Set header constraints to be above the searchbar
+        header.anchor(top: safeArea.topAnchor, paddingTop: 0, leading: safeArea.leadingAnchor, paddingLeading: 0, trailing: safeArea.trailingAnchor, paddingTrailing: 0, bottom: searchBar.topAnchor)
+        header.backgroundColor = .none
     }
     
     private func setupTableView() {
@@ -71,7 +89,6 @@ final class PostsViewController: UIViewController {
         }.store(in: &cancellables)
     }
 }
-
 
 extension PostsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
