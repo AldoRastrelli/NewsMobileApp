@@ -1,5 +1,4 @@
 
-https://github.com/AldoRastrelli/NewsMobileApp/assets/54607131/27e1e138-1d07-414b-91c2-b0fae75516f1
 # NewsMobileApp
 
 This project was built with Swift. It is a simple news app that fetches news from the News API and displays them in a list. The user can tap on a news article to view more details about it.
