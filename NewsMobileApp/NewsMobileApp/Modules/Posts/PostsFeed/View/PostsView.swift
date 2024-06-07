@@ -92,7 +92,9 @@ extension PostsViewController: UITableViewDataSource {
 extension PostsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = viewModel.filteredPosts[indexPath.row]
-        print(post)
+//        let viewModel = 
+        let vc = PostDetailView(post: post)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

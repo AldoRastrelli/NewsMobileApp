@@ -17,7 +17,6 @@ class PostModelTests: XCTestCase {
             "id": 1,
             "title": "Test Title",
             "content": "Test Content",
-            "thumbnail": "test_thumbnail.jpg",
             "category": "Test Category",
             "publishedAt": "2024-06-10"
         }
@@ -31,14 +30,13 @@ class PostModelTests: XCTestCase {
         XCTAssertEqual(post.id, 1)
         XCTAssertEqual(post.title, "Test Title")
         XCTAssertEqual(post.content, "Test Content")
-        XCTAssertEqual(post.thumbnail, "test_thumbnail.jpg")
         XCTAssertEqual(post.category, "Test Category")
         XCTAssertEqual(post.publishedAt, "2024-06-10")
     }
     
     func test_encodePostToValidJSON_isValidPost() throws {
         // Given
-        let post = Post(id: 1, title: "Test Title", content: "Test Content", thumbnail: "test_thumbnail.jpg", category: "Test Category", publishedAt: "2024-06-10")
+        let post = Post(id: 1, title: "Test Title", content: "Test Content", category: "Test Category", publishedAt: "2024-06-10")
         
         // When
         let encoder = JSONEncoder()
@@ -54,7 +52,6 @@ class PostModelTests: XCTestCase {
         return post1.id == post2.id &&
             post1.title == post2.title &&
             post1.content == post2.content &&
-            post1.thumbnail == post2.thumbnail &&
             post1.category == post2.category &&
             post1.publishedAt == post2.publishedAt
     }
