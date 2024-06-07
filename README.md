@@ -1,11 +1,14 @@
+
+https://github.com/AldoRastrelli/NewsMobileApp/assets/54607131/27e1e138-1d07-414b-91c2-b0fae75516f1
 # NewsMobileApp
 
 This project was built with Swift. It is a simple news app that fetches news from the News API and displays them in a list. The user can tap on a news article to view more details about it.
 On another tab, the user can scroll through its friends list and tap on a friend to view more details about them, including their location on a map.
 
-| iPhone 15 Pro                                                                                                       | iPhone SE                                                                                                       |
-|-----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| ![](/Evidence/iPhone15Pro.mov ) | ![](/Evidence/iPhoneSE.mov) |
+## iPhone 15 Pro
+https://github.com/AldoRastrelli/NewsMobileApp/assets/54607131/f7903e65-e6fa-49a1-8d76-ea33623f990f
+## iPhone ES
+https://github.com/AldoRastrelli/NewsMobileApp/assets/54607131/5c8ee68a-2327-4af9-9cd8-bb1864a71422
 
 
 ## How the Project was Built
@@ -44,7 +47,9 @@ The project is organized by modules. Inside the `Modules` directory, there are t
 - View: contains the ViewController
 - ViewModel: contains the ViewModel
 
-Along with the submodules, there is a 'Networking' directory that contains the API service; and a 'Common' directory that contains the shared resources between the modules such as 'GenericCell' and a UIView extension.
+Along with the submodules, there is a 'Networking' directory that contains the API service.
+
+There's also a 'Common' directory at the same level that 'Modules', that contains the shared resources between the modules such as 'GenericCell' and a UIView extension.
 
 ## Unit Tests
 The project has unit tests for each module. The tests are located in the `NewsMobileAppTests` directory.
@@ -52,13 +57,13 @@ The tests coverage is 84.3%.
 
 ## Adittional Notes
 The project has a branch called 'wip/published-protocol'. This is a work in progress branch that aims to implement a protocol to reuse the friends' list and the news list. The idea is to create a protocol that defines the properties and methods that the viewModels should have, and then make two different viewModels to conform to this protocol, each one for each list.
-This way, the ViewController can be reused and the code can be more organized.
+This way, the ViewController can be reused and the code can be more organized. Eventhough it was cancelled, the work is only missing one function so far on the viewModel's protocol: `search(searchText: String)`, which allows the view to search in the list.
 
 This idea was taking too much time of research and implementation, so I decided to leave it in a separate branch and focus on the main features of the project. Because the project is small, the reuse of the ViewController is not a priority, but it is a good practice to implement it.
 
 The code in this branch was based on the following article: [Publishing Updates Using Protocols with Combine on iOS](https://www.kiloloco.com/articles/013-published-protocols-with-combine-on-ios/).
 
-The branch still has some commented code and some code that is not working properly. It is not ready to run.
+The branch still has some commented code (some of it is wrong) and some code that is not working properly. It is not ready to run.
 
 ## References
 Links that helped me during the development of the project:
