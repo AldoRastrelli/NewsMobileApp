@@ -15,6 +15,7 @@ final class PostsViewController: UIViewController {
     private var searchBar = UISearchBar()
     private let tableView = UITableView()
     private var headerView: HeaderView?
+    private let refreshControl = UIRefreshControl()
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -79,12 +80,27 @@ final class PostsViewController: UIViewController {
         tableView.register(GenericCell.self, forCellReuseIdentifier: GenericCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
+        
+        // Add refresh control to table view
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        
+        // Configure refresh control
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    }
+    
+    @objc private func refreshData() {
+        viewModel.refreshData()
     }
     
     private func setupBindings() {
         viewModel.$filteredPosts.sink { [weak self] _ in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
+                self?.refreshControl.endRefreshing()
             }
         }.store(in: &cancellables)
     }

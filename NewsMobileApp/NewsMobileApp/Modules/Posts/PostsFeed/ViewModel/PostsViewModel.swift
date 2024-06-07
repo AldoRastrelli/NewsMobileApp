@@ -54,4 +54,8 @@ final class PostsViewModel {
             }
         }
     }
+    
+    public func refreshData() {
+        fetchPosts()
+    }
 }
