@@ -16,7 +16,7 @@ import UIKit
 
 final class PostDetailView: UIViewController {
 
-    private let post: Post
+    private let viewModel: PostDetailViewModel
     private let titleLabel: UILabel = UILabel()
     private let subtitleLabel: UILabel = UILabel()
     private let contentLabel: UILabel = UILabel()
@@ -24,8 +24,8 @@ final class PostDetailView: UIViewController {
     private let scrollView: UIScrollView = UIScrollView()
     private let contentView: UIView = UIView()
 
-    init(post: Post) {
-        self.post = post
+    init(viewModel: PostDetailViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -77,6 +77,7 @@ final class PostDetailView: UIViewController {
             trailing: contentView.trailingAnchor, paddingTrailing: 16)
 
         subtitleLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        subtitleLabel.textColor = .darkGray
         subtitleLabel.textAlignment = .center
         subtitleLabel.numberOfLines = 0
         subtitleLabel.anchor(
@@ -84,7 +85,7 @@ final class PostDetailView: UIViewController {
             leading: contentView.leadingAnchor, paddingLeading: 16,
             trailing: contentView.trailingAnchor, paddingTrailing: 16)
 
-        contentLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        contentLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         contentLabel.numberOfLines = 0
         contentLabel.anchor(
             top: subtitleLabel.bottomAnchor, paddingTop: 16,
@@ -102,6 +103,7 @@ final class PostDetailView: UIViewController {
     }
 
     private func configureUI() {
+        let post = viewModel.post
         titleLabel.text = post.title
         subtitleLabel.text = post.category
         contentLabel.text = post.content
