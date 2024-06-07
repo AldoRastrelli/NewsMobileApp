@@ -10,7 +10,6 @@ import Foundation
 import Foundation
 import Combine
 
-// TODO this needs to change and not use the users' code
 final class FriendsViewModel {
     @Published var users: [User] = []
     private var usersService: FriendsService = FriendsService()
