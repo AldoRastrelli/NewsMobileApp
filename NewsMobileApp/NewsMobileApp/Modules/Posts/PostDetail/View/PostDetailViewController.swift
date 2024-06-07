@@ -14,7 +14,7 @@
 
 import UIKit
 
-final class PostDetailView: UIViewController {
+final class PostDetailViewController: UIViewController {
 
     private let viewModel: PostDetailViewModel
     private let titleLabel: UILabel = UILabel()

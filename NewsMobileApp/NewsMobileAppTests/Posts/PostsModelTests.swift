@@ -47,7 +47,7 @@ class PostModelTests: XCTestCase {
         XCTAssertTrue(postsAreEqual(post, decodedPost))
     }
     
-    // This func is used to compare two arrays of posts without implementing "Equatable" in the Post model
+    /// This func is used to compare two arrays of posts without implementing "Equatable" in the Post model
     private func postsAreEqual(_ post1: Post, _ post2: Post) -> Bool {
         return post1.id == post2.id &&
             post1.title == post2.title &&

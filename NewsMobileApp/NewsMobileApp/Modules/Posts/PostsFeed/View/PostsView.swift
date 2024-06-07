@@ -92,8 +92,7 @@ extension PostsViewController: UITableViewDataSource {
 extension PostsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = viewModel.filteredPosts[indexPath.row]
-        let viewModel = PostDetailViewModel(post: post)
-        let vc = PostDetailView(viewModel: viewModel)
+        let vc = PostDetailModule.build(forPost: post)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
